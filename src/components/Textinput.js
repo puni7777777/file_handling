@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 
 export default function Textinput(props) {
+
+    const [text, setText] = useState("Enter Text Here");
+    const [text_count, setText_count] = useState("3");
 
     function toggleChars(msg) {
         for (let i = 0; i < msg.length; i++) {
@@ -59,8 +62,12 @@ export default function Textinput(props) {
                 check = false;
             }
         }
-        setText(newText);
+        setText_count(newText);
     };
+
+    useEffect(() => {
+        count_words();
+    }, [text]);
 
     const toggle = () => {
         let msg = text.split("");
@@ -78,7 +85,6 @@ export default function Textinput(props) {
         setText(event.target.value);
     };
 
-    const [text, setText] = useState("Enter Text Here");
     return (
         <div>
             <h1>{props.heading}</h1>
@@ -113,11 +119,11 @@ export default function Textinput(props) {
                 <button className="btn btn-outline-primary" onClick={toggle}>
                     toggle_case
                 </button>
-                <button className="btn btn-outline-primary" onClick={count_words}>
-                    count_words
-                </button>
                 <button className="btn btn-outline-primary" onClick={clear}>
                     Reset
+                </button>
+                <button className="btn btn-outline-secondary" style={{ pointerEvents: 'none' }}>
+                    {text_count} Words
                 </button>
             </div>
         </div>
