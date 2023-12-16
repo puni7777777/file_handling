@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Textinput from './components/Textinput';
 import Footer from './components/Footer';
 import Search from './components/Search';
+import ContactUs from './components/Contact';
 
 
 function App(props) {
@@ -16,6 +17,7 @@ function App(props) {
       <div className='container my-3'>
         <Textinput heading="Enter text to change" />
       </div>
+      <ContactUs />
       <Footer />
     </>
   );

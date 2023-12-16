@@ -97,32 +97,32 @@ export default function Textinput(props) {
                     rows="8"
                 ></textarea>
             </div>
-            <div className="d-inline-flex gap-3">
-                <button className="btn btn-outline-primary" onClick={capsText}>
-                    capitalize
-                </button>
-                <button className="btn btn-outline-primary" onClick={lowerText}>
-                    lower
-                </button>
-                <button className="btn btn-outline-primary" onClick={sentenceCase}>
-                    Sentence case
-                </button>
-                <button className="btn btn-outline-primary" onClick={capsEachword}>
-                    capEachword
-                </button>
-                <button className="btn btn-outline-primary" onClick={remove_lineBreaks}>
+            <div className="row gap-3 justify-content-center">
+                <button className="btn btn-outline-primary w-25" onClick={remove_lineBreaks}>
                     rm_linebreaks
                 </button>
-                <button className="btn btn-outline-primary" onClick={add_lineBreaks}>
+                <button className="btn btn-outline-primary w-25" onClick={add_lineBreaks}>
                     add_linebreaks
                 </button>
-                <button className="btn btn-outline-primary" onClick={toggle}>
+                <button className="btn btn-outline-primary w-25" onClick={capsText}>
+                    capitalize
+                </button>
+                <button className="btn btn-outline-primary w-25" onClick={lowerText}>
+                    lower
+                </button>
+                <button className="btn btn-outline-primary w-25" onClick={sentenceCase}>
+                    Sentence case
+                </button>
+                <button className="btn btn-outline-primary w-25" onClick={capsEachword}>
+                    capEachword
+                </button>
+                <button className="btn btn-outline-primary w-25" onClick={toggle}>
                     toggle_case
                 </button>
-                <button className="btn btn-outline-primary" onClick={clear}>
+                <button className="btn btn-outline-primary w-25" onClick={clear}>
                     Reset
                 </button>
-                <button className="btn btn-outline-secondary" style={{ pointerEvents: 'none' }}>
+                <button className="btn btn-outline-secondary w-25" style={{ pointerEvents: 'none' }}>
                     {text_count} Words
                 </button>
             </div>
