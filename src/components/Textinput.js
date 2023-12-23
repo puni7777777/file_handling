@@ -98,31 +98,31 @@ export default function Textinput(props) {
                 ></textarea>
             </div>
             <div className="row gap-3 justify-content-center">
-                <button className="btn btn-outline-primary w-25" onClick={remove_lineBreaks}>
+                <button className="btn btn-outline-primary w-25 overflow-hidden" onClick={remove_lineBreaks}>
                     rm_linebreaks
                 </button>
-                <button className="btn btn-outline-primary w-25" onClick={add_lineBreaks}>
+                <button className="btn btn-outline-primary w-25 overflow-hidden" onClick={add_lineBreaks}>
                     add_linebreaks
                 </button>
-                <button className="btn btn-outline-primary w-25" onClick={capsText}>
+                <button className="btn btn-outline-primary w-25 overflow-hidden" onClick={capsText}>
                     capitalize
                 </button>
-                <button className="btn btn-outline-primary w-25" onClick={lowerText}>
+                <button className="btn btn-outline-primary w-25 overflow-hidden" onClick={lowerText}>
                     lower
                 </button>
-                <button className="btn btn-outline-primary w-25" onClick={sentenceCase}>
+                <button className="btn btn-outline-primary w-25 overflow-hidden" onClick={sentenceCase}>
                     Sentence case
                 </button>
-                <button className="btn btn-outline-primary w-25" onClick={capsEachword}>
+                <button className="btn btn-outline-primary w-25 overflow-hidden" onClick={capsEachword}>
                     capEachword
                 </button>
-                <button className="btn btn-outline-primary w-25" onClick={toggle}>
+                <button className="btn btn-outline-primary w-25 overflow-hidden" onClick={toggle}>
                     toggle_case
                 </button>
-                <button className="btn btn-outline-primary w-25" onClick={clear}>
+                <button className="btn btn-outline-primary w-25 overflow-hidden" onClick={clear}>
                     Reset
                 </button>
-                <button className="btn btn-outline-secondary w-25" style={{ pointerEvents: 'none' }}>
+                <button className="btn btn-outline-secondary w-25 overflow-hidden" style={{ pointerEvents: 'none' }}>
                     {text_count} Words
                 </button>
             </div>

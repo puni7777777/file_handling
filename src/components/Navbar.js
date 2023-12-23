@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 export default function Navbar(props) {
     return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary" style={{zIndex: 50}}>
+        <nav className="navbar navbar-expand-lg bg-body-tertiary" style={{ zIndex: 50 }}>
             <div className="container-fluid">
                 <a className="navbar-brand" href="/">{props.title}</a>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collaps                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               e" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">

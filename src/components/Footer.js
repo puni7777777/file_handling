@@ -1,6 +1,5 @@
 import React from 'react';
 import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
-import { toHaveErrorMessage } from '@testing-library/jest-dom/matchers';
 
 export default function Footer() {
   return (
@@ -100,8 +99,8 @@ export default function Footer() {
                 Telangana, India, IN
               </p>
               <p>
-                <MDBIcon icon="envelope" className="me-3" />
-                msg232002@gmail.com
+                <MDBIcon icon="envelope" className="me-2" />
+                punithkumar3002371@gmail.com
               </p>
               {/* <p>
                 <MDBIcon icon="phone" className="me-3" /> + 01 234 567 88
