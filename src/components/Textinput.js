@@ -87,8 +87,11 @@ export default function Textinput(props) {
 
     return (
         <div>
-            <h1>{props.heading}</h1>
-            <div className="mb-3">
+            <div className="d-flex justify-content-between align-items-end mb-3">
+                <h1>{props.heading}</h1>
+                <h6>{text_count} Words</h6>
+            </div>
+            <div className="mb-3 mr-0">
                 <textarea
                     className="form-control"
                     value={text}
@@ -97,33 +100,30 @@ export default function Textinput(props) {
                     rows="8"
                 ></textarea>
             </div>
-            <div className="row gap-3 justify-content-center">
-                <button className="btn btn-outline-primary w-25 overflow-hidden" onClick={remove_lineBreaks}>
+            <div className="d-flex justify-content-center gap-3 flex-wrap">
+                <button className="btn btn-outline-primary overflow-hidden" onClick={remove_lineBreaks}>
                     rm_linebreaks
                 </button>
-                <button className="btn btn-outline-primary w-25 overflow-hidden" onClick={add_lineBreaks}>
+                <button className="btn btn-outline-primary overflow-hidden" onClick={add_lineBreaks}>
                     add_linebreaks
                 </button>
-                <button className="btn btn-outline-primary w-25 overflow-hidden" onClick={capsText}>
+                <button className="btn btn-outline-primary overflow-hidden" onClick={capsText}>
                     capitalize
                 </button>
-                <button className="btn btn-outline-primary w-25 overflow-hidden" onClick={lowerText}>
+                <button className="btn btn-outline-primary overflow-hidden" onClick={lowerText}>
                     lower
                 </button>
-                <button className="btn btn-outline-primary w-25 overflow-hidden" onClick={sentenceCase}>
+                <button className="btn btn-outline-primary overflow-hidden" onClick={sentenceCase}>
                     Sentence case
                 </button>
-                <button className="btn btn-outline-primary w-25 overflow-hidden" onClick={capsEachword}>
+                <button className="btn btn-outline-primary overflow-hidden" onClick={capsEachword}>
                     capEachword
                 </button>
-                <button className="btn btn-outline-primary w-25 overflow-hidden" onClick={toggle}>
+                <button className="btn btn-outline-primary overflow-hidden" onClick={toggle}>
                     toggle_case
                 </button>
-                <button className="btn btn-outline-primary w-25 overflow-hidden" onClick={clear}>
+                <button className="btn btn-outline-danger overflow-hidden" onClick={clear}>
                     Reset
-                </button>
-                <button className="btn btn-outline-secondary w-25 overflow-hidden" style={{ pointerEvents: 'none' }}>
-                    {text_count} Words
                 </button>
             </div>
         </div>
