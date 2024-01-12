@@ -1,0 +1,29 @@
+#installation
+npm install react-router-dom@6
+
+
+#in index.js file
+import { BrowserRouter } from 'react-router-dom';
+
+  <StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </StrictMode>
+
+
+#In App.js file import the following:
+import { Routes, Route } from 'react-router-dom';
+
+import Home from './pages/Home';
+import About from './pages/About';
+
+<Routes>
+  <Route path="/" element={<Home />} />
+  <Route path="about" element={<About />} />
+</Routes>
+
+
+#in file to link
+import { Link } from 'react-router-dom';
+Link to="/about">About</Link>

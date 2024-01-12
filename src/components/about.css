@@ -1,0 +1,14 @@
+* {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.para {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.para p{
+    width: 50vw;
+    font-size: 1.3rem;
+}

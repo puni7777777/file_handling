@@ -50,6 +50,17 @@ export default function Textinput(props) {
         setText(newText);
     };
 
+    const num_to_text = () => {
+        try {
+            var converter = require('number-to-words');
+            let words = converter.toWords(text);
+            let newText = words.replaceAll(',', '')
+            setText(newText);
+        } catch (err) {
+            setText('Enter a number to change it to words');
+        }
+    };
+
     const count_words = () => {
         let newText = 0;
         let check = false;
@@ -86,7 +97,7 @@ export default function Textinput(props) {
     };
 
     return (
-        <div>
+        <div className="container my-3">
             <div className="d-flex justify-content-between align-items-end mb-3">
                 <h1>{props.heading}</h1>
                 <h6>{text_count} Words</h6>
@@ -121,6 +132,9 @@ export default function Textinput(props) {
                 </button>
                 <button className="btn btn-outline-primary overflow-hidden" onClick={toggle}>
                     toggle_case
+                </button>
+                <button className="btn btn-outline-primary overflow-hidden" onClick={num_to_text}>
+                    num_to_words
                 </button>
                 <button className="btn btn-outline-danger overflow-hidden" onClick={clear}>
                     Reset

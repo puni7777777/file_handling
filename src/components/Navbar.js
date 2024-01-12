@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types';
 
 export default function Navbar(props) {
@@ -12,10 +12,10 @@ export default function Navbar(props) {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="/">Home</a>
+                            <a className={'nav-link ' + props.home_active} aria-current="page" href="/">Home</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/">About</a>
+                            <a className={'nav-link ' + props.about_active} href="/about">About</a>
                         </li>
                     </ul>
                 </div>
@@ -26,9 +26,12 @@ export default function Navbar(props) {
 
 Navbar.propTypes = {
     title: PropTypes.string.isRequired,
+    home_active: PropTypes.string.isRequired,
+    about_active: PropTypes.string.isRequired,
 }
 
 Navbar.defaultProps = {
     title: "Add title here",
-
+    home_active: "",
+    about_active: "",
 }
