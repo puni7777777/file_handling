@@ -2,10 +2,9 @@ import React from 'react'
 import Navbar from './Navbar'
 import './about.css'
 
-export default function About() {
+function About() {
     return (
         <>
-            <Navbar title="TextHandle" about_active='active' />
             <div className='para'>
                 <p align='justify'>This is a text manipulation tool.
                     Welcome to <i>TEXTHANDLE</i>, where words come to life with a
@@ -29,3 +28,5 @@ export default function About() {
         </>
     )
 }
+
+export default About; 

@@ -5,10 +5,9 @@ import ContactUs from './Contact'
 import Footer from './Footer'
 
 
-export default function Home() {
+function Home() {
     return (
         <>
-            <Navbar title="TextHandle" home_active='active'/>
             {/* <Search /> */}
             {/* <Login /> */}
             <Textinput heading="Enter text to change" />
@@ -17,3 +16,5 @@ export default function Home() {
         </>
     )
 }
+
+export default Home;

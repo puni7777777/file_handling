@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 export default function Navbar(props) {
     return (
@@ -12,10 +13,10 @@ export default function Navbar(props) {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <a className={`nav-link ${props.home_active}`} aria-current="page" href="/">Home</a>
+                            <Link to="/" className={`nav-link ${props.home_active}`} aria-current="page" onClick={props.onHomeClick}>Home</Link>
                         </li>
                         <li className="nav-item">
-                            <a className={`nav-link ${props.about_active}`} href="/about">About</a>
+                            <Link to="/about" className={`nav-link ${props.about_active}`} onClick={props.onAboutClick}>About</Link>
                         </li>
                     </ul>
                 </div>
@@ -28,6 +29,8 @@ Navbar.propTypes = {
     title: PropTypes.string.isRequired,
     home_active: PropTypes.string.isRequired,
     about_active: PropTypes.string.isRequired,
+    onHomeClick: PropTypes.func.isRequired,
+    onAboutClick: PropTypes.func.isRequired,
 }
 
 Navbar.defaultProps = {
