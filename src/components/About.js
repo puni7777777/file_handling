@@ -5,7 +5,7 @@ import './about.css'
 function About() {
     return (
         <>
-            <Navbar title="TextHandle" about_active='active' />
+            {/* <Navbar title="TextHandle" about_active='active' /> */}
             <div className='para'>
                 <p align='justify'>This is a text manipulation tool.
                     Welcome to <i>TEXTHANDLE</i>, where words come to life with a

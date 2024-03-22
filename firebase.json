@@ -9,7 +9,7 @@
     "rewrites": [
       {
         "source": "**",
-        "destination": "/index.html"
+        "destination": "C:/Users/PUNITH/Desktop/reactjs/file_handling/public/index.html"
       }
     ]
   }

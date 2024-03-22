@@ -10,7 +10,7 @@ function Home() {
         <>
             {/* <Search /> */}
             {/* <Login /> */}
-            <Navbar title="TextHandle" home_active='active'/>
+            {/* <Navbar title="TextHandle" home_active='active'/> */}
             <Textinput heading="Enter text to change" />
             <ContactUs />
             <Footer />

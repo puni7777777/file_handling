@@ -41,8 +41,8 @@ Navbar.propTypes = {
     title: PropTypes.string.isRequired,
     home_active: PropTypes.string.isRequired,
     about_active: PropTypes.string.isRequired,
-    // onHomeClick: PropTypes.func.isRequired,
-    // onAboutClick: PropTypes.func.isRequired,
+    onHomeClick: PropTypes.func.isRequired,
+    onAboutClick: PropTypes.func.isRequired,
 }
 
 Navbar.defaultProps = {

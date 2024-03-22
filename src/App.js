@@ -14,13 +14,13 @@ function App() {
   const handleHomeClick = () => {
     setHomeActive('active');
     setAboutActive('');
-    console.log("home")
+    // console.log("home")
   };
 
   const handleAboutClick = () => {
     setHomeActive('');
     setAboutActive('active');
-    console.log("about")
+    // console.log("about")
   };
 
   return (
