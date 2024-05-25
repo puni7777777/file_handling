@@ -96,6 +96,10 @@ export default function Textinput(props) {
         setText(event.target.value);
     };
 
+    const selectAll = () => {
+        document.getElementById("text-box").select();
+    }
+
     return (
         <div className="container my-3">
             <div className="d-flex justify-content-between align-items-end mb-3">
@@ -112,6 +116,9 @@ export default function Textinput(props) {
                 ></textarea>
             </div>
             <div className="d-flex justify-content-center gap-3 flex-wrap">
+                <button className="btn btn-outline-primary overflow-hidden" onClick={selectAll}>
+                    selectAll
+                </button>
                 <button className="btn btn-outline-primary overflow-hidden" onClick={remove_lineBreaks}>
                     rm_linebreaks
                 </button>
