@@ -16,7 +16,7 @@ export default function Navbar(props) {
         <>
             <nav className="navbar navbar-expand-lg bg-body-tertiary" style={{ zIndex: 50 }}>
                 <div className="container-fluid">
-                    <a href='/' className="navbar-brand">{props.title}</a>
+                    <a href='/texthandle' className="navbar-brand">{props.title}</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
