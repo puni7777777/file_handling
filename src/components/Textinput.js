@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 export default function Textinput(props) {
 
-    const [text, setText] = useState("Enter Text Here");
-    const [text_count, setText_count] = useState("3");
+    const [text, setText] = useState('Enter Text Here');
+    const [text_count, setText_count] = useState('3');
+    const [find, setFind] = useState('');
+    const [replase, setReplase] = useState('');
 
     function toggleChars(msg) {
         for (let i = 0; i < msg.length; i++) {
@@ -81,70 +83,94 @@ export default function Textinput(props) {
     }, [text]);
 
     const toggle = () => {
-        let msg = text.split("");
+        let msg = text.split('');
         toggleChars(msg);
-        let newText = msg.join("");
+        let newText = msg.join('');
         setText(newText);
     };
 
     const clear = () => {
-        let newText = "Enter Text Here";
+        let newText = 'Enter Text Here';
         setText(newText);
     };
+
+    const selectAll = () => {
+        document.getElementById('text-box').select();
+    }
+
+    const rePlace = () => {
+        setText(text.replace(find, replase))
+    }
+
+    const rePlaceAll = () => {
+        setText(text.replaceAll(find, replase))
+    }
 
     const handleOnChange = (event) => {
         setText(event.target.value);
     };
 
-    const selectAll = () => {
-        document.getElementById("text-box").select();
-    }
+    const handleFindChange = (event) => {
+        setFind(event.target.value);
+    };
+
+    const handleReplaseChange = (event) => {
+        setReplase(event.target.value);
+    };
 
     return (
-        <div className="container my-3">
-            <div className="d-flex justify-content-between align-items-end mb-3">
+        <div className='container my-3'>
+            <div className='d-flex justify-content-between align-items-end mb-3'>
                 <h1>{props.heading}</h1>
                 <h6>{text_count} Words</h6>
             </div>
-            <div className="mb-3 mr-0">
+            <div className='mb-3 mr-0'>
                 <textarea
-                    className="form-control"
+                    className='form-control'
                     value={text}
                     onChange={handleOnChange}
-                    id="text-box"
-                    rows="8"
+                    id='text-box'
+                    rows='8'
                 ></textarea>
             </div>
-            <div className="d-flex justify-content-center gap-3 flex-wrap">
-                <button className="btn btn-outline-primary overflow-hidden" onClick={selectAll}>
+            <div className='d-flex justify-content-center gap-3 flex-wrap'>
+                <button className='btn btn-outline-primary overflow-hidden' onClick={selectAll}>
                     selectAll
                 </button>
-                <button className="btn btn-outline-primary overflow-hidden" onClick={remove_lineBreaks}>
+                <button className='btn btn-outline-primary overflow-hidden' onClick={remove_lineBreaks}>
                     rm_linebreaks
                 </button>
-                <button className="btn btn-outline-primary overflow-hidden" onClick={add_lineBreaks}>
+                <button className='btn btn-outline-primary overflow-hidden' onClick={add_lineBreaks}>
                     add_linebreaks
                 </button>
-                <button className="btn btn-outline-primary overflow-hidden" onClick={capsText}>
+                <button className='btn btn-outline-primary overflow-hidden' onClick={capsText}>
                     capitalize
                 </button>
-                <button className="btn btn-outline-primary overflow-hidden" onClick={lowerText}>
+                <button className='btn btn-outline-primary overflow-hidden' onClick={lowerText}>
                     lower
                 </button>
-                <button className="btn btn-outline-primary overflow-hidden" onClick={sentenceCase}>
+                <button className='btn btn-outline-primary overflow-hidden' onClick={sentenceCase}>
                     Sentence case
                 </button>
-                <button className="btn btn-outline-primary overflow-hidden" onClick={capsEachword}>
+                <button className='btn btn-outline-primary overflow-hidden' onClick={capsEachword}>
                     capEachword
                 </button>
-                <button className="btn btn-outline-primary overflow-hidden" onClick={toggle}>
+                <button className='btn btn-outline-primary overflow-hidden' onClick={toggle}>
                     toggle_case
                 </button>
-                <button className="btn btn-outline-primary overflow-hidden" onClick={num_to_text}>
+                <button className='btn btn-outline-primary overflow-hidden' onClick={num_to_text}>
                     num_to_words
                 </button>
-                <button className="btn btn-outline-danger overflow-hidden" onClick={clear}>
+                <button className='btn btn-outline-danger overflow-hidden' onClick={clear}>
                     Reset
+                </button>
+                <input type="text" onChange={handleFindChange} />
+                <input type="text" onChange={handleReplaseChange} />
+                <button className='btn btn-outline-primary overflow-hidden' onClick={rePlace}>
+                    replace
+                </button>
+                <button className='btn btn-outline-primary overflow-hidden' onClick={rePlaceAll}>
+                    replaceall
                 </button>
             </div>
         </div>
@@ -157,5 +183,5 @@ Textinput.propTypes = {
 }
 
 Textinput.defaultProps = {
-    heading: "Enter text",
+    heading: 'Enter text',
 }
