@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 
 export default function Textinput(props) {
 
     const [text, setText] = useState('Enter Text Here');
+    const [history, setHistory] = useState([]);
+    const prevHistory = []
     const [text_count, setText_count] = useState('3');
     const [find, setFind] = useState('');
     const [replase, setReplase] = useState('');
@@ -98,6 +100,15 @@ export default function Textinput(props) {
         document.getElementById('text-box').select();
     }
 
+    const findText = () => {
+        const inputSelect = document.getElementById('text-box')
+        const index = inputSelect.value.indexOf(find);
+        if (index !== -1) {
+            inputSelect.focus();
+            inputSelect.setSelectionRange(index, index + find.length);
+        }
+    }
+
     const rePlace = () => {
         setText(text.replace(find, replase))
     }
@@ -108,6 +119,8 @@ export default function Textinput(props) {
 
     const handleOnChange = (event) => {
         setText(event.target.value);
+        // setHistory([...prevHistory, event.target.value]);
+        // console.log(history)
     };
 
     const handleFindChange = (event) => {
@@ -131,9 +144,10 @@ export default function Textinput(props) {
                     onChange={handleOnChange}
                     id='text-box'
                     rows='8'
+                    onFocus={selectAll}
                 ></textarea>
             </div>
-            <div className='d-flex justify-content-center gap-3 flex-wrap'>
+            <div className='d-flex justify-content-center gap-3 flex-wrap mb-3'>
                 <button className='btn btn-outline-primary overflow-hidden' onClick={selectAll}>
                     selectAll
                 </button>
@@ -164,14 +178,36 @@ export default function Textinput(props) {
                 <button className='btn btn-outline-danger overflow-hidden' onClick={clear}>
                     Reset
                 </button>
-                <input type="text" onChange={handleFindChange} />
-                <input type="text" onChange={handleReplaseChange} />
-                <button className='btn btn-outline-primary overflow-hidden' onClick={rePlace}>
-                    replace
-                </button>
-                <button className='btn btn-outline-primary overflow-hidden' onClick={rePlaceAll}>
-                    replaceall
-                </button>
+            </div>
+            <div className='d-flex justify-content-center gap-3 flex-wrap'>
+                <div className='d-flex justify-content-center gap-2 flex-wrap'>
+                    <div className='d-flex align-items-center'>
+                        <label htmlFor='find' className='d-flex flex-column justify-content-center'>
+                            find
+                            <input type="text" id='find' className='form-control' onChange={handleFindChange} />
+                        </label>
+                    </div>
+                    <div className='d-flex align-items-center'>
+                        <label htmlFor='replace' className='d-flex flex-column justify-content-center'>
+                            replace with
+                            <input type="text" className='form-control' onChange={handleReplaseChange} />
+                        </label>
+                    </div>
+                </div>
+                <div className='d-flex gap-3 align-items-center'>
+                    <button className='btn btn-outline-primary overflow-hidden' onClick={findText}>
+                        Find
+                    </button>
+                    <button className='btn btn-outline-primary overflow-hidden' onClick={rePlace}>
+                        replace
+                    </button>
+                    <button className='btn btn-outline-primary overflow-hidden' onClick={rePlaceAll}>
+                        replaceall
+                    </button>
+                    {/* <button className='btn btn-outline-primary overflow-hidden' onClick={()=>{const prevText = history[-1];setText(prevText)}}>
+                        back
+                    </button> */}
+                </div>
             </div>
         </div>
     );
