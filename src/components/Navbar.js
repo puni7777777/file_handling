@@ -61,9 +61,9 @@ export default function Navbar(props) {
                 </div>
             </nav>
             <Routes>
-                <Route path="/texthandle" exact element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<ContactUs />} />
+                <Route path="texthandle" exact element={<Home />} />
+                <Route path="about" element={<About />} />
+                <Route path="contact" element={<ContactUs />} />
             </Routes>
         </>
     )
