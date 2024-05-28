@@ -9,26 +9,26 @@ import ContactUs from './Contact';
 
 export default function Navbar(props) {
 
-    const location = useLocation();
-    const [homeClass, setHomeClass] = useState(`nav-link active`)
-    const [aboutClass, setAboutClass] = useState(`nav-link`)
-    const [contactClass, setContactClass] = useState(`nav-link`)
+    // const location = useLocation();
+    // const [homeClass, setHomeClass] = useState(`nav-link active`)
+    // const [aboutClass, setAboutClass] = useState(`nav-link`)
+    // const [contactClass, setContactClass] = useState(`nav-link`)
 
-    useEffect(() => {
-        if (location.pathname === '/texthandle') {
-            setHomeClass(`nav-link active`);
-            setAboutClass(`nav-link`);
-            setContactClass(`nav-link`);
-        } else if (location.pathname === '/about') {
-            setHomeClass(`nav-link`);
-            setAboutClass(`nav-link active`);
-            setContactClass(`nav-link`);
-        } else if (location.pathname === '/contact') {
-            setHomeClass(`nav-link`);
-            setAboutClass(`nav-link`);
-            setContactClass(`nav-link active`);
-        }
-    }, [location]);
+    // useEffect(() => {
+    //     if (location.pathname === '/texthandle') {
+    //         setHomeClass(`nav-link active`);
+    //         setAboutClass(`nav-link`);
+    //         setContactClass(`nav-link`);
+    //     } else if (location.pathname === '/about') {
+    //         setHomeClass(`nav-link`);
+    //         setAboutClass(`nav-link active`);
+    //         setContactClass(`nav-link`);
+    //     } else if (location.pathname === '/contact') {
+    //         setHomeClass(`nav-link`);
+    //         setAboutClass(`nav-link`);
+    //         setContactClass(`nav-link active`);
+    //     }
+    // }, [location]);
 
     const handleSearch = (searchValue) => {
         console.log("Search value:", searchValue)
@@ -45,13 +45,13 @@ export default function Navbar(props) {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <a href='texthandle' className={homeClass} aria-current="page" >Home</a>
+                                <a href='texthandle' className={'nav-link'} aria-current="page" >Home</a>
                             </li>
                             <li className="nav-item">
-                                <a href='about' className={aboutClass} >About</a>
+                                <a href='about' className={'nav-link'} >About</a>
                             </li>
                             <li className="nav-item">
-                                <a href='contact' className={contactClass} >Contact me</a>
+                                <a href='contact' className={'nav-link'} >Contact me</a>
                             </li>
                             {/* <li className="nav-item">
                             <Search onSearch={handleSearch} />
