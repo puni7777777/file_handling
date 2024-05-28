@@ -38,20 +38,20 @@ export default function Navbar(props) {
         <>
             <nav className="navbar navbar-expand-lg bg-body-tertiary position-sticky fixed-top" style={{ zIndex: 50 }}>
                 <div className="container-fluid">
-                    <a href='/texthandle' className="navbar-brand">{props.title}</a>
+                    <Link href='/texthandle' className="navbar-brand">{props.title}</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <a href='texthandle' className={'nav-link'} aria-current="page" >Home</a>
+                                <Link href='texthandle' className={'nav-link'} aria-current="page" >Home</Link>
                             </li>
                             <li className="nav-item">
-                                <a href='about' className={'nav-link'} >About</a>
+                                <Link href='about' className={'nav-link'} >About</Link>
                             </li>
                             <li className="nav-item">
-                                <a href='contact' className={'nav-link'} >Contact me</a>
+                                <Link href='contact' className={'nav-link'} >Contact me</Link>
                             </li>
                             {/* <li className="nav-item">
                             <Search onSearch={handleSearch} />
@@ -62,8 +62,8 @@ export default function Navbar(props) {
             </nav>
             <Routes>
                 <Route path="/texthandle" exact element={<Home />} />
-                <Route path="/texthandle/about" element={<About />} />
-                <Route path="/texthandle/contact" element={<ContactUs />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<ContactUs />} />
             </Routes>
         </>
     )
