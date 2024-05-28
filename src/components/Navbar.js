@@ -27,10 +27,6 @@ export default function Navbar(props) {
             setHomeClass(`nav-link`);
             setAboutClass(`nav-link`);
             setContactClass(`nav-link active`);
-        } else {
-            setHomeClass(`nav-link`);
-            setAboutClass(`nav-link`);
-            setContactClass(`nav-link`);
         }
     }, [location]);
 
