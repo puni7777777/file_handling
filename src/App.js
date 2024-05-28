@@ -8,27 +8,10 @@ import Navbar from './components/Navbar';
 
 function App() {
 
-  const [homeActive, setHomeActive] = useState('active');
-  const [aboutActive, setAboutActive] = useState('');
-
-  const handleHomeClick = () => {
-    setHomeActive('active');
-    setAboutActive('');
-    // console.log("home")
-  };
-
-  const handleAboutClick = () => {
-    setHomeActive('');
-    setAboutActive('active');
-    // console.log("about")
-  };
-
   return (
-      <>
-        <Navbar title="TextHandle" home_active={homeActive}
-          about_active={aboutActive}
-          onHomeClick={handleHomeClick} onAboutClick={handleAboutClick} />
-      </>
+    <>
+      <Navbar title="TextHandle" />
+    </>
   );
 }
 

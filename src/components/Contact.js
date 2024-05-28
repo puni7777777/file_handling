@@ -40,7 +40,7 @@ export default function ContactUs() {
     };
 
     return (
-        <div>
+        <div className='vh-100 d-flex justify-content-center flex-column'>
             <div className='d-flex justify-content-center p-4'>
                 <h3>Contact Me</h3>
             </div>
