@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types';
-import { Link, useLocation } from 'react-router-dom';
+import { BrowserRouter, Link, useLocation } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import Search from './Search';
@@ -36,35 +36,37 @@ export default function Navbar(props) {
 
     return (
         <>
-            <nav className="navbar navbar-expand-lg bg-body-tertiary position-sticky fixed-top" style={{ zIndex: 50 }}>
-                <div className="container-fluid">
-                    <a href='/texthandle' className="navbar-brand">{props.title}</a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarNav">
-                        <ul className="navbar-nav">
-                            <li className="nav-item">
-                                <a href='/texthandle' className={'nav-link'} aria-current="page" >Home</a>
-                            </li>
-                            <li className="nav-item">
-                                <a href='about' className={'nav-link'} >About</a>
-                            </li>
-                            <li className="nav-item">
-                                <a href='contact' className={'nav-link'} >Contact me</a>
-                            </li>
-                            {/* <li className="nav-item">
+            <BrowserRouter basename='/texthandle'>
+                <nav className="navbar navbar-expand-lg bg-body-tertiary position-sticky fixed-top" style={{ zIndex: 50 }}>
+                    <div className="container-fluid">
+                        <a href='/texthandle' className="navbar-brand">{props.title}</a>
+                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+                        <div className="collapse navbar-collapse" id="navbarNav">
+                            <ul className="navbar-nav">
+                                <li className="nav-item">
+                                    <a href='/texthandle' className={'nav-link'} aria-current="page" >Home</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a href='about' className={'nav-link'} >About</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a href='contact' className={'nav-link'} >Contact me</a>
+                                </li>
+                                {/* <li className="nav-item">
                             <Search onSearch={handleSearch} />
                             </li> */}
-                        </ul>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </nav>
-            <Routes>
-                <Route path="/texthandle" exact element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<ContactUs />} />
-            </Routes>
+                </nav>
+                <Routes>
+                    <Route path="/texthandle" exact element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/contact" element={<ContactUs />} />
+                </Routes>
+            </BrowserRouter>
         </>
     )
 }
