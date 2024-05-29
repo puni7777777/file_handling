@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 export default function Textinput(props) {
 
     const [text, setText] = useState('Enter Text Here');
-    const [history, setHistory] = useState(['','']);
+    const [history, setHistory] = useState([]);
+    const prevHistory = []
     const [text_count, setText_count] = useState('3');
     const [find, setFind] = useState('');
     const [replase, setReplase] = useState('');
@@ -115,20 +116,11 @@ export default function Textinput(props) {
     const rePlaceAll = () => {
         setText(text.replaceAll(find, replase))
     }
-    
-    const back = () => {
-        if (history[0] != '') {
-            setText(history[0])  
-        }else{
-            alert('No History')
-        }
-        console.log(history)
-    }
 
     const handleOnChange = (event) => {
-        const inputValue = event.target.value
-        setText(inputValue);
-        setHistory([history[1], inputValue])
+        setText(event.target.value);
+        // setHistory([...prevHistory, event.target.value]);
+        // console.log(history)
     };
 
     const handleFindChange = (event) => {
@@ -212,9 +204,9 @@ export default function Textinput(props) {
                     <button className='btn btn-outline-primary overflow-hidden' onClick={rePlaceAll}>
                         replaceall
                     </button>
-                    <button className='btn btn-outline-primary overflow-hidden' onClick={back}>
+                    {/* <button className='btn btn-outline-primary overflow-hidden' onClick={()=>{const prevText = history[-1];setText(prevText)}}>
                         back
-                    </button>
+                    </button> */}
                 </div>
             </div>
         </div>
