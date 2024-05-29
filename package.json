@@ -2,7 +2,7 @@
   "name": "file_handling",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://puni7777777.github.io/texthandle/",
+  "homepage": "https://puni7777777.github.io/texthandle",
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
     "@mui/material": "^5.15.9",
