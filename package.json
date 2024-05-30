@@ -13,6 +13,7 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^9.1.3",
     "babel-preset-env": "^1.7.0",
+    "caniuse-lite": "^1.0.30001625",
     "cors": "^2.8.5",
     "create-react-app": "^5.0.1",
     "emailjs": "^4.0.3",
