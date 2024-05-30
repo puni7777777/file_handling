@@ -46,7 +46,7 @@ export default function Navbar(props) {
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav">
                                 <li className="nav-item">
-                                    <a href='/texthandle' className={'nav-link'} aria-current="page" >Home</a>
+                                    <a href='texthandle' className={'nav-link'} aria-current="page" >Home</a>
                                 </li>
                                 <li className="nav-item">
                                     <a href='about' className={'nav-link'} >About</a>
@@ -62,9 +62,9 @@ export default function Navbar(props) {
                     </div>
                 </nav>
                 <Routes>
-                    <Route path="/texthandle" exact element={<Home />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/contact" element={<ContactUs />} />
+                    <Route path="texthandle/texthandle" exact element={<Home />} />
+                    <Route path="texthandle/about" element={<About />} />
+                    <Route path="texthandle/contact" element={<ContactUs />} />
                 </Routes>
             </BrowserRouter>
         </>
